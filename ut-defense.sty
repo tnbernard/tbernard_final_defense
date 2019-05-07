@@ -1,0 +1,97 @@
+\mode<presentation> {
+  \definecolor{myteal}{RGB}{94, 156, 174}
+  \definecolor{UT_orange}{RGB}{191, 87, 0}
+  %\usetheme{Madrid}
+  \usetheme{Boadilla}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{mini frames}{}
+  \setbeamertemplate{section in head/foot}{}
+  \setbeamercovered{transparent=0}
+  \setbeameroption{show notes}
+  \setbeamercolor{structure}{bg=UT_orange,fg=UT_orange}
+  \setbeamercolor{section title}{bg=white,fg=UT_orange}
+  \setbeamercolor{block title}{bg=UT_orange,fg=white}
+  \setbeamercolor{block body}{bg=UT_orange!40,fg=black!75}
+  \setbeamercolor{title in head/foot}{bg=myteal,fg=white}
+  \setbeamercolor{footer accent}{bg=myteal!50,fg=black}
+  \setbeamerfont{caption}{size=\scriptsize}
+  \setbeamerfont{caption name}{series=\bfseries}
+  \setbeamertemplate{enumerate items}[default]
+  \setbeamertemplate{enumerate items}[circle]
+  
+  \newlength{\headerheight}
+  \setlength{\headerheight}{.075\paperheight}
+  
+  \defbeamertemplate*{title page}{customized}[1][]
+    {%
+        \vspace*{-\baselineskip}
+        \begin{beamercolorbox}[width=\paperwidth,height=\headerheight]{block title}
+        \end{beamercolorbox}
+        \begin{tikzpicture}[remember picture,overlay]
+        \node[yshift=.15cm,anchor=north] at (current page.north)
+         {\includegraphics[clip, trim=2cm 2cm 2cm 1cm, width=\paperwidth]{figs/helimak_nElc_ZX_1000.pdf}};
+         %{\includegraphics[height=1cm]{ifslogo.pdf}};
+        \end{tikzpicture}
+
+        \centering
+        \vspace{1cm}
+        \usebeamerfont{title}\usebeamercolor[fg]{subtitle}\inserttitle\par
+        \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+        \vspace{1cm}
+        \usebeamerfont{author}\usebeamercolor[black]{}\insertauthor\par
+        \usebeamerfont{institute}\insertinstitute\par
+        \vspace{1cm}
+        \small
+        \usebeamerfont{date}\insertdate\par
+        \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+    }
+    
+    \setbeamertemplate{footline}
+  {%
+    %\leavevmode%
+    %\ifnum \insertpagenumber=1%
+    %\vskip 0pt
+    %\else%
+    \hbox{%
+    \begin{beamercolorbox}[wd=0.25\paperwidth,ht=2.25ex,dp=1ex,center]{footer accent}
+        \let\hyperlink\@secondoftwo\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \let\hyperlink\@secondoftwo\insertshorttitle
+      %\hspace*{1em} \insertsectionhead
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{footer accent}\insertframenumber{}
+    \end{beamercolorbox}%
+     }%
+     %\vskip 0pt
+     %\fi%
+    }
+    
+}
+
+
+    % \ifnum \insertpagenumber=1%
+    % \parskip0pt\offinterlineskip%
+    % \leavevmode%
+    %  \hbox{%
+    %   \begin{beamercolorbox}[wd=\paperwidth,ht=1cm,dp=1ex,center]{block title}%ht=1cm,dp=1ex,right]{black}%
+    %   \end{beamercolorbox}%
+    %     \begin{tikzpicture}[remember picture,overlay]%
+    %     \node[anchor=north] at (current page.north) 
+    %     {\includegraphics[clip, trim=2cm 2cm 2cm 1cm, width=\paperwidth]{figs/helimak_nElc_ZX_1000.pdf}};
+    %     %{\includegraphics[\width=5cm]{ifslogo.pdf}};
+    %     \end{tikzpicture}
+
+\defbeamertemplate{itemize item}{circlealt}%
+{\small\raise.2ex\hbox{\donotcoloroutermaths$\bullet$}}
+\defbeamertemplate{itemize subitem}{circlealt}%
+{\small\raise.1ex\hbox{\donotcoloroutermaths$\circ$}}
+\defbeamertemplate{itemize subsubitem}{circlealt}%
+{\scriptsize\raise.1ex\hbox{\donotcoloroutermaths$\bullet$}}
+
+%\def\circletext{circle}
+%\setbeamertemplate{items}[circlealt]
+
+\mode<all>
+
+  
