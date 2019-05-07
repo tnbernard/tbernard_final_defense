@@ -237,7 +237,7 @@
         \captionsetup{width=.6\linewidth}
         \centering
         \includegraphics[width=1.3\linewidth,clip,trim=1cm 0cm 0cm 0cm]{figs/heli-cross-sec1.png} \\
-        \tiny Schematic of \textbf{Texas Helimak} (above). \\ Toroidal coordinates for comparison (below). 
+        \tiny Schematic of \textbf{Texas Helimak} (above). Adapted from Perez \etal\ (2006). Toroidal coordinates for comparison (below). 
         \hfill
         \begin{figure}
             \centering
@@ -918,16 +918,30 @@ Turbulent eddies in the \\ presence of velocity shear...
 \end{frame}
 
 \appendix
-\begin{frame}{Gyrokinetics:~time scales in Helimak and $\bm{B}^*$}
-    
+\begin{frame}{Gyrokinetics:~time scales in Helimak\footnote{Perez \etal\ (2006)} and $\bm{B}^*$}
+    Electron plasma frequency: $\omega_{pe} = 1.79 \times 10^{10}$ 1/s\\
+    Electron gyrofrequency: $\Omega_{ce} = 1.76 \times 10^{10}$ 1/s \\
+    Ion plasma frequency: $\omega_{pi} = 6.6 \times 10^{7}$ 1/s\\
+    Ion gyrofrequency: $\Omega_{ci} = 2.59 \times 10^{5}$ 1/s
+    \\
+    \vspace{1cm}
+    In the gyrokinetic equation... 
+    \begin{align}
+    B_\parallel^* &= \bm{b} \cdot \bm{B}_\parallel^* \\ \bm{B}_\parallel^* &= \bm{B} +(Bv_\parallel/\Omega_s)\nabla \times \bm{b}
+    \end{align}
 \end{frame}
 
 \begin{frame}{Convergence testing}
-    
+    \begin{figure}
+    \centering
+    \includegraphics[width=.6\linewidth]{figs/kx-Nx-ths.pdf}
+    \caption[Power in the Fourier transform in $x$ of electron density fluctuations compared for various resolutions.]{Power in the Fourier transform in $x$ of electron density fluctuations is compared for various resolutions. The power has been averaged in $y$, $z$, and in time from 10 to 16 ms. The low resolution case has $(N_x,N_y,N_z,N_{v_\parallel},N_\mu) = (N_x,12,8,10,5)$ and the higher resolution case has $(N_x,N_y,N_z,N_{v_\parallel},N_\mu) = (N_x,24,16,10,5)$. The decay of the power at high $k_x$ indicates that our simulations are not changed significantly with increased resolution.}
+    \label{fig:kx-converge}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Radiation and neutral density}
-    
+    We estimated the total radiative cooling using the predicted radiative cooling rate $L_Z$ in Mavrin (2017). The total power radiated in the device is given by $P_{\text{rad}}\mathcal{V}= L_Z n_e n_{\text{imp}} \mathcal{V} \simeq 5.5$ kW, assuming $T_e = 10$ eV, $n_e=1 \times 10^{16}$ m$^{-3}$, and the total Argon density, including neutrals, is $n_{\text{imp}}=4 \times 10^{17}$ m$^{-3}$. $\mathcal{V}$ is the total volume of Helimak vacuum vessel.
 \end{frame}
 
 \begin{frame}{Real $m_e$}
@@ -954,7 +968,7 @@ Turbulent eddies in the \\ presence of velocity shear...
   \end{minipage}
 \end{frame}
 
-\begin{frame}{Interchange growth rate derivation} \scriptsize
+\begin{frame}{Interchange growth rate derivation}
 Begin with ArcOn equations:
     \begin{align}
     \partial_t n + [\phi, n ] = - \alpha n + D \nabla_\bot ^2 n + S_n \label{eq:arc-n}\\
